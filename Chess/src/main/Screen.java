@@ -3,7 +3,7 @@ package main;
 import javax.swing.JPanel;
 
 import java.util.ArrayList;
-
+import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -146,5 +146,10 @@ public class Screen extends JPanel implements Runnable { // Runnable - wątkowan
         board.draw(g);
 
         for(Piece p : symulPieces) p.draw(g);
+
+        if(activePiece != null) {
+            g.setColor(Color.white);
+            g.setComposite(AlphaComposite.getInstance());
+        }
     }
 }
