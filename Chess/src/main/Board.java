@@ -13,7 +13,7 @@ public class Board {
     Color cLight = new Color(235, 161, 52); // 235, 161, 52 - jasny
     Color cDark = new Color(168, 104, 8); // 168, 104, 8 - ciemny
     
-    // int leftPanelWidth = 200;
+    int leftPanelWidth = 200;
 
     public void draw(Graphics2D g) {
         int colorFlag = 0;
@@ -28,9 +28,10 @@ public class Board {
                     colorFlag = 0;
                 }
 
-            g.fillRect(c*_SQUARE_SIZE, r*_SQUARE_SIZE, _SQUARE_SIZE, _SQUARE_SIZE);
+            g.fillRect(leftPanelWidth+c*_SQUARE_SIZE, r*_SQUARE_SIZE, _SQUARE_SIZE, _SQUARE_SIZE);
 
             }
+            colorFlag = (colorFlag == 0) ?  1 : 0;
 
         }
     }
